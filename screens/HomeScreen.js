@@ -79,12 +79,15 @@ const styles = StyleSheet.create({
     },
     heading: {
         fontSize: 30,
-        color: "#fff"
+        color: "#fff",
+        fontFamily: "CenturyGothic",
+        fontWeight: 'bold0'
     },
     subheading: {
         fontSize: 16,
         color: "#fff",
-        marginBottom: 10
+        marginBottom: 10,
+        fontFamily: "Century Gothic"
     },
     priceText: {
         fontSize: 30,
@@ -106,7 +109,8 @@ const styles = StyleSheet.create({
         color: '#485a7a',
         fontSize: 16,
         fontWeight: 'bold',
-        textTransform: 'capitalize'
+        textTransform: 'capitalize',
+        fontFamily: "Comic-Sans"
     },
     card: {
         flexDirection: 'row',
@@ -133,8 +137,9 @@ const styles = StyleSheet.create({
     cardContentHeading: {
         color: '#485a7a',
         fontSize: 15,
-        fontWeight: 'bold',
-        textTransform: 'capitalize'
+        fontWeight: '800',
+        textTransform: 'capitalize',
+        fontFamily: "Century Gothic"
     },
     cardContentSubHeading: {
         color: '#bdbdbd',
