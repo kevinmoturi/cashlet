@@ -17,6 +17,8 @@ import {
   View,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import HomeScreen from './screens/HomeScreen';
+import { NativeBaseProvider } from 'native-base';
 
 const App = () => {
 
@@ -24,11 +26,11 @@ const App = () => {
 
     <NavigationContainer>
 
-      <View>
+      <NativeBaseProvider>
 
-        <Text>Cash Let</Text>
+        <HomeScreen />
 
-      </View>
+      </NativeBaseProvider>
 
     </NavigationContainer>
 
