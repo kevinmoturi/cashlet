@@ -8,38 +8,20 @@
 
 import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
+  StyleSheet
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
-import { NativeBaseProvider } from 'native-base';
 
 const App = () => {
 
   return (
 
-    <NavigationContainer>
-
-      <NativeBaseProvider>
-
-        <HomeScreen />
-
-      </NativeBaseProvider>
-
-    </NavigationContainer>
+    <HomeScreen />
 
   );
-
+  
 };
 
-const styles = StyleSheet.create({
-  
-});
+const styles = StyleSheet.create({});
 
 export default App;

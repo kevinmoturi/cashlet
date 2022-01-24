@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import { Text, StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Toast } from 'native-base';
+import Snackbar from './../components/Snackbar';
 
 class HomeScreen extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {}
+      this.snackbar = createRef();
+    }
+    displaySnackBar = () => {
+        this.snackbar.current.ShowSnackBarFunction(`This is an in-app notification snackbar to ${"\n"} show to the user when they perform an ${"\n"} action. Clicking it should change the text.`, 10000);
+    };
     render() {
         return (
             <ScrollView contentContainerStyle={styles.contentContainer}>
@@ -48,13 +57,14 @@ class HomeScreen extends Component {
                                 <Icon name='keyboard-arrow-right' color="#485a7a" size={24} />
                             </View>
                         </View>
-                        <TouchableOpacity style={styles.snackbarButtonWrapper} activeOpacity={0.6} onPress={() => Toast.show({ title: `This is an in-app notification snackbar to ${"\n"} show to the user when they perform an ${"\n"} action. Clicking it should change the next`, duration: 5000, isClosable: true, placement: "top", buttonText: 'Undo', style: { backgroundColor: '#e62180', fontSize: 16 } })}>
+                        <TouchableOpacity style={styles.snackbarButtonWrapper} activeOpacity={0.6} onPress={() => this.displaySnackBar()}>
                             <View style={styles.snackbarButton}>
                                 <Text style={styles.snackbarButtonText}>Show Snackbar</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
                 </View>
+                <Snackbar ref={this.snackbar} />
             </ScrollView>
         )
     }
@@ -64,7 +74,8 @@ const styles = StyleSheet.create({
     contentContainer: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        position: 'relative'
     },
     header: {
         backgroundColor: '#485a7a',
@@ -81,7 +92,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         color: "#fff",
         fontFamily: "CenturyGothic",
-        fontWeight: 'bold0'
+        fontWeight: 'bold'
     },
     subheading: {
         fontSize: 16,
