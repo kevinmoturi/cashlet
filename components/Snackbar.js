@@ -57,7 +57,7 @@ class SnackBar extends Component {
         return(
             <Animated.View style = {[{ transform: [{ translateY: this.animatedValue }]}, {...styles.SnackBarContainter, opacity: this.fadeAnimation} ]}>
                 <View style={{ flex: 2 }}>
-                    <Text style={ styles.SnackBarMessage }>{ this.state.message }</Text>
+                    <Text onPress={() => this.setState({ message: 'User clicked snackbar' })} style={ styles.SnackBarMessage }>{ this.state.message }</Text>
                 </View>
                 <View style={{ width: 50, height: 50  }}>
                     <Text style = { styles.SnackBarUndoText} onPress = { this.SnackBarCloseFunction }>
